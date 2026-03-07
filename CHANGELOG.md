@@ -3,6 +3,13 @@
 ### 🚀 Features
 
 - Bundle LibStub directly in repo (#29)
+## [3.5.7](https://github.com/DragonAddons/LibAnimate/compare/3.5.6...3.5.7) (2026-03-07)
+
+
+### Bug Fixes
+
+* only animate properties defined by keyframes ([#58](https://github.com/DragonAddons/LibAnimate/issues/58)) ([20ab83a](https://github.com/DragonAddons/LibAnimate/commit/20ab83a6dc6c73c733245c1ce2431e5feb088697))
+
 ## [3.5.6](https://github.com/Xerrion/LibAnimate/compare/3.5.5...3.5.6) (2026-03-01)
 
 
