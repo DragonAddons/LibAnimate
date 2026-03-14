@@ -15,7 +15,34 @@ permissions:
 
 jobs:
   release:
-    uses: DragonAddons/wow-workflows/.github/workflows/release.yml@main
-    with:
-      tag_name: ${{ inputs.tag_name || '' }}
-    secrets: inherit
+    name: Package and Upload
+    runs-on: ubuntu-latest
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
+      GITHUB_OAUTH: ${{ github.token }}
+    steps:
+      - name: Resolve tag
+        shell: bash
+        run: |
+          if [[ -n "${{ inputs.tag_name || '' }}" ]]; then
+            TAG="${{ inputs.tag_name }}"
+          else
+            TAG="${{ github.ref_name }}"
+          fi
+          echo "TAG_NAME=$TAG" >> "$GITHUB_ENV"
+
+      - name: Checkout tag
+        uses: actions/checkout@v5
+        with:
+          ref: refs/tags/${{ env.TAG_NAME }}
+          fetch-depth: 0
+
+      - name: Generate changelog
+        shell: bash
+        run: bash scripts/generate_changelog.sh
+
+      - name: Package and upload
+        uses: BigWigsMods/packager@v2
+        env:
+          GITHUB_REF: refs/tags/${{ env.TAG_NAME }}
