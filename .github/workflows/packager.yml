@@ -1,0 +1,19 @@
+name: Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "The tag to package"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    uses: Xerrion/wow-workflows/.github/workflows/packager.yml@main
+    with:
+      tag_name: ${{ inputs.tag_name }}
+    secrets: inherit
