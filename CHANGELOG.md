@@ -27,7 +27,7 @@
 ### CI/CD
 
 * add proper changelog ([b685083](https://github.com/Xerrion/LibAnimate/commit/b685083811d444d22da1ded29c883542f1dc6db0))
-* migrate reusable workflows to DragonAddons org ([9c8aa6d](https://github.com/Xerrion/LibAnimate/commit/9c8aa6d9c6e17089f0e0bde023201c4449541c02))
+* migrate reusable workflows to Xerrion org ([9c8aa6d](https://github.com/Xerrion/LibAnimate/commit/9c8aa6d9c6e17089f0e0bde023201c4449541c02))
 
 ## [3.5.5](https://github.com/Xerrion/LibAnimate/compare/3.5.4...3.5.5) (2026-02-24)
 
