@@ -57,14 +57,15 @@ jobs:
 
           git checkout -B "$BRANCH"
 
-          git add -A '*.toc'
+          git add -A
           git commit -m "$TITLE"
 
           git push --force-with-lease origin "$BRANCH"
 
           gh label create "automated" --description "Auto-generated changes" --color "ededed" 2>/dev/null || true
 
-          if ! gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number' | grep -q .; then
+          pr_number="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -z "$pr_number" ]; then
             gh pr create \
               --base "master" \
               --head "$BRANCH" \
