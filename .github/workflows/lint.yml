@@ -2,16 +2,8 @@ name: Lint
 
 on:
   pull_request_target:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
-  luacheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - uses: nebularg/actions-luacheck@v1
-        with:
-          args: --no-color
+  lint:
+    uses: Xerrion/wow-workflows/.github/workflows/lint.yml@main

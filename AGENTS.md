@@ -214,10 +214,15 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ### Pull Requests
 1. Create PRs via CLI using the repo's `.github/PULL_REQUEST_TEMPLATE.md` format
-2. Link to the issue with `Closes #N` in the PR body
-3. PRs require passing status checks (luacheck, test) before merge
-4. Squash merge only: `gh pr merge <number> --squash`
-5. Branches are auto-deleted after merge
+2. Set the PR title explicitly with `--title`. Do not rely on `gh pr create` defaults.
+3. PR titles must use Conventional Commit style and should usually match the primary commit intent.
+4. If the branch has multiple commits, write the PR title as a clean Conventional Commit summary of the overall change.
+5. Set the PR body explicitly with `--body` or `--body-file`. Do not leave it empty.
+6. PR bodies should include short `## Summary`, `## Changes`, and `## Testing` sections.
+7. Link to the issue with `Closes #N` in the PR body
+8. PRs require passing status checks (luacheck, test) before merge
+9. Squash merge only: `gh pr merge <number> --squash`
+10. Branches are auto-deleted after merge
 
 ### Project Boards
 When a repo has a GitHub Projects board, update issue status as work progresses:
