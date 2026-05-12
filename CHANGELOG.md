@@ -3,6 +3,13 @@
 ### 🚀 Features
 
 - Bundle LibStub directly in repo (#29)
+## [3.5.9](https://github.com/Xerrion/LibAnimate/compare/3.5.8...3.5.9) (2026-05-12)
+
+
+### Documentation
+
+* tighten AGENTS.md to project-specific rules ([#63](https://github.com/Xerrion/LibAnimate/issues/63)) ([f6cbe20](https://github.com/Xerrion/LibAnimate/commit/f6cbe207c6022eef8d765a11f2ca3e1e8bfc4b94))
+
 ## [3.5.8](https://github.com/Xerrion/LibAnimate/compare/3.5.7...3.5.8) (2026-03-15)
 
 
