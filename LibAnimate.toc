@@ -1,4 +1,4 @@
-## Interface: 120007, 120001, 120000
+## Interface: 120100, 120001, 120000
 ## Interface-Mists: 50504, 50503
 ## Interface-BCC: 20506
 ## Title: Lib: Animate
